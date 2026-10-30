@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/vad-loggas.js" defer></script>
+  </head>
+  <body>
+    <main class="container stack gap-l">
+      <header class="stack gap-xs">
+        <h1 class="title">Scope</h1>
+        <p class="text-muted">Del 4 av 4 · Mutable, immutable och scope</p>
+      </header>
+
+      <p class="console-hint">
+        Allt händer i konsolen. Öppna DevTools (F12) och välj <strong>Console</strong>.
+        Gissa vad som loggas innan du sparar.
+      </p>
+
+      <ol class="steps">
+        <li><strong>const låser pilen, inte arrayen.</strong> <code>push</code> går, <code>list = []</code> går inte.</li>
+        <li><strong>Globalt scope.</strong> Syns överallt.</li>
+        <li><strong>Funktionsscope.</strong> Det som skapas i en funktion stannar där.</li>
+        <li><strong>Blockscope.</strong> <code>let</code> och <code>const</code> lever mellan <code>{</code> och <code>}</code>.</li>
+        <li><strong>var läcker.</strong> Därför använder vi det inte.</li>
+        <li><strong>Shadowing.</strong> Samma namn i ett inre scope.</li>
+        <li><strong>Scope-kedjan.</strong> Inre ser ut, yttre ser aldrig in.</li>
+        <li><strong>Extra: closure.</strong> Funktioner minns var de skapades.</li>
+        <li><strong>Extra: var och let i en loop.</strong></li>
+      </ol>
+
+      <p>Sedan: <code>js/vad-loggas.js</code>. Sex korta funktioner. Gissa först, kör sedan.</p>
+
+      <section class="stack" aria-labelledby="sketches-title">
+        <h2 class="subtitle" id="sketches-title">Skisser</h2>
+
+        <figure class="figure">
+          <img src="../img/07-const-laser-pilen.svg" alt="Pilen från list till arrayen är låst med ett hänglås. Arrayen går att ändra, men pilen går inte att flytta till en ny array." />
+          <figcaption>Steg 1: const låser pilen, inte arrayen.</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="../img/08-scope-lador.svg" alt="Tre lådor i varandra: globalt scope, en funktion och ett if-block. Den inre lådan ser variablerna i de yttre, men inte tvärtom." />
+          <figcaption>Steg 2–7: lådor i lådor.</figcaption>
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>

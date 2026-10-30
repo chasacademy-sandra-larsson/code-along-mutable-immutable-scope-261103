@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spellistan</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <main class="container stack gap-l">
+      <header class="stack gap-xs">
+        <h1 class="title">Spellistan</h1>
+        <p class="text-muted">Del 3 av 4 · Lägg till, gilla, ta bort och sortera. Ångra ska ta dig ett steg bakåt.</p>
+      </header>
+
+      <form class="cluster song-form" id="song-form">
+        <div class="field">
+          <label for="title">Låt</label>
+          <input type="text" id="title" required />
+        </div>
+        <div class="field">
+          <label for="artist">Artist</label>
+          <input type="text" id="artist" required />
+        </div>
+        <button type="submit" class="button">Lägg till</button>
+      </form>
+
+      <div class="cluster">
+        <button type="button" class="button button-secondary" id="btn-sort">Sortera A–Ö</button>
+        <button type="button" class="button button-secondary" id="btn-undo">Ångra</button>
+      </div>
+
+      <ol class="song-list" id="song-list" aria-label="Låtar"></ol>
+
+      <section class="card stack gap-s" aria-labelledby="history-title">
+        <h2 class="subtitle" id="history-title">Historik</h2>
+        <p class="text-muted">Varje rad är en sparad version av listan, den senaste överst. Det är dit Ångra går tillbaka.</p>
+        <ol class="history-list" id="history-list" reversed></ol>
+      </section>
+    </main>
+  </body>
+</html>

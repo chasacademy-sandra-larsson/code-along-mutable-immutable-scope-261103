@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Övningar: skriv om utan att mutera</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- Ordningen spelar roll: test.js använder funktionerna i ovningar.js -->
+    <script src="js/ovningar.js" defer></script>
+    <script src="js/test.js" defer></script>
+  </head>
+  <body>
+    <main class="container stack gap-l">
+      <header class="stack gap-xs">
+        <h1 class="title">Skriv om utan att mutera</h1>
+        <p class="text-muted">Del 2 av 4 · Mutable, immutable och scope</p>
+      </header>
+
+      <p class="console-hint">
+        Alla funktioner i <code>js/ovningar.js</code> ger rätt svar redan, men de ändrar det de får.
+        Skriv om dem så att originalet lämnas orört. Spara och ladda om: listan nedan rättar.
+      </p>
+
+      <ol class="results" id="results" aria-live="polite"></ol>
+    </main>
+  </body>
+</html>
