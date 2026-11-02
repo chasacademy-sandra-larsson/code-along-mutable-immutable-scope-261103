@@ -1,6 +1,6 @@
 # Mutable, immutable och scope
 
-Code-along i fyra delar. Spread och rest känner ni redan till. Här tittar vi på vad som händer under ytan: varför `b = a` inte kopierar en array, vad spread egentligen gör, och varför det spelar roll. Sist kopplar vi ihop det med scope.
+Code-along i fyra delar. Här tittar vi på vad som händer under ytan: varför `b = a` inte kopierar en array, vad spread egentligen gör, och varför det spelar roll. Sist kopplar vi ihop det med scope.
 
 ## Kom igång
 
