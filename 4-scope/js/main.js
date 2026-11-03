@@ -97,18 +97,8 @@ console.groupEnd();
 
 
 
-// Steg 8: EXTRA – funktioner minns var de skapades
-// ---------------------------------------------------------------
-// createCounter() returnerar en funktion som räknar upp.
-// Var bor count? Går den att nå utifrån?
-console.group("Steg 8: Closure");
 
 
-
-console.groupEnd();
-
-
-
-// Steg 9: EXTRA – var och let i en loop
+// Steg 8: EXTRA – var och let i en loop
 // ---------------------------------------------------------------
 // setTimeout i en loop, en gång med var och en gång med let.

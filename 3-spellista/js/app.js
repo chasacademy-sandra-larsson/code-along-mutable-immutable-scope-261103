@@ -36,9 +36,10 @@ const songs = [
   { id: 4, title: "Dancing On My Own", artist: "Robyn", liked: false },
 ];
 
+
+
 // Gamla versioner av songs.
 const versions = [];
-
 
 
 // ---------- 3. Funktioner ----------
