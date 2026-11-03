@@ -13,17 +13,32 @@
 // 1. Lägg till en todo sist
 // ---------------------------------------------------------------
 function addTodo(todos, text) {
-  todos.push(text);
-  return todos;
+  //todos.push(text);
+  //const copy = [...todos, text];
+  return [...todos, text];
 }
 
 
 
+const todos = [
+    {id: 1,
+      text: "mata hunden"
+    },
+      {id: 2,
+      text: "mata katten"
+    },
+
+]
+
 // 2. Ta bort todon på plats index
 // ---------------------------------------------------------------
 function removeTodo(todos, index) {
-  todos.splice(index, 1);
-  return todos;
+  //todos.splice(index, 1);
+  // 1. 
+  // return todos.toSpliced(index, 1);
+  // 2. 
+  return todos.filter((todo, i) => i !== index);
+
 }
 
 
@@ -31,7 +46,7 @@ function removeTodo(todos, index) {
 // 3. Sortera produkterna, billigast först
 // ---------------------------------------------------------------
 function sortByPrice(products) {
-  return products.sort((p, q) => p.price - q.price);
+  return  products.toSorted((p, q) => p.price - q.price);
 }
 
 
@@ -39,8 +54,8 @@ function sortByPrice(products) {
 // 4. Byt namn på en användare
 // ---------------------------------------------------------------
 function renameUser(user, newName) {
-  user.name = newName;
-  return user;
+  
+  return {...user, name: newName};
 }
 
 
@@ -50,9 +65,9 @@ function renameUser(user, newName) {
 // Svårare: todos är en array med objekt. Det räcker inte att
 // kopiera arrayen, todon du ändrar måste också vara ny.
 function toggleDone(todos, id) {
-  const todo = todos.find((todo) => todo.id === id);
-  todo.done = !todo.done;
-  return todos;
+  //const todo = todos.find((todo) => todo.id === id);
+  //todo.done = !todo.done;
+  return todos.map((todo) => ( todo.id === id ? { ...todo, done: !todo.done } : todo ))
 }
 
 
@@ -62,6 +77,7 @@ function toggleDone(todos, id) {
 // Svårare: city ligger i ett objekt i objektet. Kom ihåg fällan.
 function moveToCity(user, city) {
   user.address.city = city;
+  const newUser = {...user, address: { ...user.adress, city}}
   return user;
 }
 
@@ -70,8 +86,10 @@ function moveToCity(user, city) {
 // 7. Ta bort lösenordet innan användaren skickas vidare
 // ---------------------------------------------------------------
 function withoutPassword(user) {
-  delete user.password;
-  return user;
+  // delete user.password;
+  const {password, ...rest} = user;
+   
+  return rest;
 }
 
 
@@ -79,10 +97,10 @@ function withoutPassword(user) {
 // 8. EXTRA: Slå ihop standardinställningar med användarens val
 // ---------------------------------------------------------------
 function mergeSettings(defaults, choices) {
-  for (const key in choices) {
-    defaults[key] = choices[key];
-  }
-  return defaults;
+  // for (const key in choices) {
+  //   defaults[key] = choices[key];
+  // }
+  return {...defaults, ...choices};
 }
 
 
@@ -91,6 +109,6 @@ function mergeSettings(defaults, choices) {
 // ---------------------------------------------------------------
 // biggest(3, 9, 4) ska ge 9. Just nu tar den bara emot en array.
 // Använd rest OCH spread.
-function biggest(numbers) {
-  return Math.max(numbers);
+function biggest(...numbers) {
+  return Math.max(...numbers);
 }

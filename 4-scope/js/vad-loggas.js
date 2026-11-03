@@ -6,7 +6,7 @@
 // Tre av dem handlar om scope, tre om referenser.
 //
 // Mina gissningar:
-// quiz1:
+// quiz1: 
 // quiz2:
 // quiz3:
 // quiz4:
@@ -90,9 +90,9 @@ function quiz6() {
 
 
 
-// quiz1();
-// quiz2();
-// quiz3();
-// quiz4();
-// quiz5();
-// quiz6();
+quiz1();
+quiz2();
+quiz3();
+quiz4();
+quiz5();
+quiz6();
