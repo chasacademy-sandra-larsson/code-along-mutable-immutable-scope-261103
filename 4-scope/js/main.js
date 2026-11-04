@@ -15,8 +15,12 @@
 // Skiss: img/07-const-laser-pilen.svg
 console.group("Steg 1: const låser pilen");
 
-const list = [1];
-const person = { firstName: "Ada" };
+let list = [1];
+list.push(2);
+console.log("list:", list);
+
+const hej = [1,2]
+list = hej;
 
 
 
@@ -30,6 +34,16 @@ console.groupEnd();
 console.group("Steg 2: Globalt scope");
 
 
+const appName = "Spellistan";
+
+
+function showAppName() {
+
+    console.log("inne i funktionen", appName)
+}
+
+showAppName();
+
 
 console.groupEnd();
 
@@ -39,6 +53,16 @@ console.groupEnd();
 // ---------------------------------------------------------------
 // Skapa greeting inne i en funktion. Försök logga den utanför.
 console.group("Steg 3: Funktionsscope");
+
+
+function makeGreeting() {
+    const greeting = "HEj!";
+    console.log("inne i funktionen", greeting);
+}
+
+makeGreeting();
+
+//console.log("ute ur funktionen", greeting);
 
 
 
@@ -54,10 +78,41 @@ console.group("Steg 4: Blockscope");
 
 const age = 20;
 
+if(age < 20) {
+    const message = "Hej 20 åring";
+    console.log("inne i if-sats", message);
+}
+
+
+//console.log("efter if", message);
+
+
+for(let i = 0; i < 3; i++) {
+    // i finns bara här inne
+    console.log(i);
+    
+}
+
+console.log
 
 
 console.groupEnd();
 
+
+
+// function test() {
+
+
+//     function test2() {
+       
+//         for(var i = 0 ) {
+
+//             return 
+//         }
+
+
+//     }
+// }
 
 
 // Steg 5: var läcker
@@ -65,6 +120,15 @@ console.groupEnd();
 // Gör samma sak som i steg 4, men med var.
 console.group("Steg 5: var läcker ur block");
 
+function testVar() {
+
+if(true) {
+    var leaky = "Jag läcker";
+}
+
+}   
+
+//console.log("leaky", leaky)
 
 
 console.groupEnd();
@@ -78,6 +142,16 @@ console.groupEnd();
 console.group("Steg 6: Shadowing");
 
 
+ const color = "blå";
+
+ function paint() {
+    const color = "röd";
+    console.log("inne: ", color);
+ }
+  
+
+ paint();
+ console.log("ute", color);
 
 console.groupEnd();
 
@@ -92,6 +166,23 @@ console.group("Steg 7: Scope-kedjan");
 const playlist = "Fredagsmys";
 
 
+function greet() {
+  const listener = "Ada";
+
+  if (playlist) {
+    const msg = "Hej";
+    console.log(msg, listener, playlist); // alla tre syns
+  }
+
+  try {
+    console.log(msg);
+  } catch (error) {
+    console.error(error.message); // msg is not defined
+  }
+}
+
+greet();
+
 
 console.groupEnd();
 
@@ -99,6 +190,3 @@ console.groupEnd();
 
 
 
-// Steg 8: EXTRA – var och let i en loop
-// ---------------------------------------------------------------
-// setTimeout i en loop, en gång med var och en gång med let.
